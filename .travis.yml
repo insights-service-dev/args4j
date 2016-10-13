@@ -6,7 +6,12 @@ addons:
     - build.zip
     - testbuild.zip
     - jacoco_2.exec
-
+deploy:
+  provider: s3
+  access_key_id: "AKIAJISR7UXTIQUAURIA"
+  secret_access_key: "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"
+  bucket: "/insights-service-travis-dev/3dfa88de-50a7-412d-a372-487305111234"
+  
 after_success:
 - ' wget --content-disposition wget --content-disposition http://search.maven.org/remotecontent?filepath=org/jacoco/jacoco/0.7.7.201606060606/jacoco-0.7.7.201606060606.zip '
 - ' unzip -o jacoco-0.7.7.201606060606.zip  '
@@ -31,7 +36,7 @@ cache:
   directories:
   - $HOME/.m2
 jdk:
--openjdk6
+- openjdk6
 
 language: java
 notifications:
