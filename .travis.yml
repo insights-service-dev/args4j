@@ -38,7 +38,7 @@ cache:
   directories:
   - $HOME/.m2
 jdk:
--  - openjdk6
+-openjdk6
 
 language: java
 notifications:
